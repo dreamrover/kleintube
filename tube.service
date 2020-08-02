@@ -1,0 +1,15 @@
+[Unit]
+Description=KleinTube
+
+[Service]
+ExecStart=/home/any/kleintube/tube.js
+Restart=always
+User=nobody
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/any/kleintube
+
+[Install]
+WantedBy=multi-user.target
