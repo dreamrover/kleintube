@@ -1,7 +1,7 @@
 {
     "server": [
-        { "port": 1357, "key": "password1" },
-        { "port": 2468, "key": "password2" }
+        { "host": "0.0.0.0", "port": 1357, "key": "password1" },
+        { "host": "0.0.0.0", "port": 2468, "key": "password2" }
     ],
     "client": [{
         "host": "localhost",
