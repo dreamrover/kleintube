@@ -1,0 +1,30 @@
+{
+  "name": "kleintube",
+  "version": "1.0.2",
+  "description": "A simple proxy server/client based on socks5, websocket and chacha20-poly1305.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamrover/kleintube.git"
+  },
+  "keywords": [
+    "socks5",
+    "chacha20",
+    "poly1305"
+  ],
+  "author": "dreamrover",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^7.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dreamrover/kleintube/issues"
+  },
+  "homepage": "https://github.com/dreamrover/kleintube#readme"
+}
