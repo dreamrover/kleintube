@@ -1,5 +1,8 @@
 # KleinTube
 A simple proxy server/client written in nodejs based on socks5, websocket and chacha20-poly1305.
+
+<img width="125" height="240" src="https://github.com/dreamrover/screenshots/blob/master/Klein_bottle.svg" />
+
 ## 简介
 KleinTube（克莱因管）命名源自[克莱因瓶](https://zh.wikipedia.org/wiki/%E5%85%8B%E8%8E%B1%E5%9B%A0%E7%93%B6)——没有“内部”和“外部”之分的平面，表示没有服务端和客户端之分的“管道”，亦表示可以同时运行为服务端和客户端的网络代理工具。
 
