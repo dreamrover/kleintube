@@ -33,6 +33,6 @@ try {
         throw new Error('No available settings for server or client in %s.', cfgfile);
     }
 } catch (e) {
-    console.log(e.toString());
+    console.error(e.toString());
     process.exit(1);
 }
