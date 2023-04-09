@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-//require('console-stamp')(console, '[HH:MM:ss.l]');
+//require('console-stamp')(console, 'yyyy-mm-dd HH:MM:ss.l');
 const fs = require('fs');
 const klein = require('./lib/klein');
 
