@@ -1,6 +1,6 @@
 {
   "name": "kleintube",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A simple proxy server/client based on socks5, websocket and chacha20-poly1305.",
   "main": "index.js",
   "directories": {
