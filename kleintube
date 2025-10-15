@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# PROVIDE: kleintube
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=kleintube
+rcvar=kleintube_enable
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-r -P ${pidfile} /usr/local/bin/node /usr/local/lib/node_modules/kleintube/kleintube.js /usr/local/lib/node_modules/kleintube/config.json"
+
+load_rc_config $name
+: ${kleintube_enable:=no}
+
+run_rc_command "$1"

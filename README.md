@@ -12,18 +12,20 @@ KleinTube（克莱因管）命名源自[克莱因瓶](https://zh.wikipedia.org/w
 
 客户端和服务端的连接使用基于WebSocket的自创协议，化繁为简，数据的加密和验证采用AEAD算法，具有高安全性和低冗余度，并将身份验证和代理请求融为一体，使得数据和连接没有任何特征，难于被监测。
 
-目前所有代码仅500余行，可运行于Linux、Windows及Mac OS等支持nodejs的系统，速度略快于著名代理工具[v2ray](https://www.v2ray.com)。安卓客户端正在开发中。
+目前所有代码仅500余行，可运行于Linux、FreeBSD、Windows及MacOS等支持nodejs的系统，速度与主流代理工具相当，甚至略快。
 
 客户端为本地提供socks5代理，通过WebSocket连接至服务端，数据传输采用chacha20-poly1305加密。客户端可同时监听多个端口提供socks5代理，各端口可分别转发至不同服务端；服务端亦可同时监听多个端口。
 ## 安装
 ### Linux
 * sudo npm i -g kleintube
+### FreeBSD
+* sudo npm i -g kleintube
 ### Windows
 * npm i kleintube
 ## 参数
-所有参数均在文件config.json中设置，server字段的内容是作为服务端的配置参数，client字段的内容是作为客户端的配置参数，可以仅保留server或client字段以单独作为服务端或客户端，也可以保留两者同时作为服务端和客户端。
+Linux/FreeBSD系统通常默认安装在/usr/local/lib/node_modules/kleintube目录，所有参数均在文件config.json中设置，server字段的内容是作为服务端的配置参数，client字段的内容是作为客户端的配置参数，可以仅保留server或client字段以单独作为服务端或客户端，也可以保留两者同时作为服务端和客户端。
 
-参数文件也可在运行tube.js时通过第一个参数指定。
+参数文件也可在运行kleintube.js时通过第一个参数指定。
 ## 运行
 ### 配置文件
 运行前建议修改配置文件config.json中的参数，包括端口、密码等，此文件为JSON格式，具体介绍如下：
@@ -54,14 +56,17 @@ Linux系统可开启TCP fastopen以加快TCP连接的建立：
 设置为自动开启：
 * echo "net.ipv4.tcp_fastopen = 3" >> /etc/sysctl.conf
 ### Debian/Ubuntu
-将tube.servie拷贝至/etc/systemd/system/目录，运行以下命令启动服务：
-* sudo systemctl start tube
-### RHEL/CentOS
-将tube.servie中的Group=nogroup修改为Group=nobody，然后拷贝至/etc/systemd/system/目录，运行以下命令启动服务：
-* sudo systemctl start tube
+将kleintube.servie拷贝至/etc/systemd/system/目录，运行以下命令启动服务：
+* sudo systemctl start kleintube
+### RedHat
+将kleintube.servie中的Group=nogroup修改为Group=nobody，然后拷贝至/etc/systemd/system/目录，运行以下命令启动服务：
+* sudo systemctl start kleintube
+### FreeBSD
+将kleintube拷贝至/usr/local/etc/rc.d/目录，运行以下命令启动服务：
+* sudo service kleintube start
 ### Windows
 #### 运行方式一：直接运行
-* node.exe path\to\kleintube\tube.js
+* node.exe path\to\kleintube\kleintube.js
 #### 运行方式二：添加至系统服务（推荐）
 首先安装node-windows：
 * npm i node-windows
